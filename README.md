@@ -27,13 +27,42 @@ Inspirado en los principios del **preparacionismo urbano y rural (preppers)**, l
 
 ---
 
+## ⚖️ Arquitectura Legal y de Contenido (Sin Infracciones de Copyright)
+
+Para garantizar plena seguridad jurídica y evitar problemas de propiedad intelectual o alertas por derechos de autor (DMCA), **este repositorio en GitHub NO almacena libros protegidos, PDFs comerciales ni binarios pesados**. 
+
+* **El Repositorio contiene:** Únicamente el esqueleto estructural, scripts de automatización, la interfaz web y el archivo de manifiesto (`SOURCES.md`) con los enlaces oficiales y legales de referencia externa.
+* **La USB o Servidor Local contiene:** El almacenamiento privado del usuario. Cada operador descarga y aloja los archivos de forma local y offline bajo su propia gestión, cumpliendo con la normativa de uso personal y educativo.
+
+---
+
+## ⚙️ ¿Cómo Funciona el Proceso de Sincronización y Uso?
+
+El flujo técnico para preparar y mantener tu unidad de respaldo operativa consta de los siguientes pasos:
+
+1. **Preparación del Soporte:** Formatea tu memoria USB (preferiblemente dual USB-A / USB-C) en formato **exFAT** para soportar archivos de gran tamaño (como mapas vectoriales o bases de datos de Wikipedia).
+2. **Obtención del Esqueleto:** Clona o descarga la estructura base de este repositorio.
+3. **Consulta de Fuentes Legales:** Revisa el archivo `SOURCES.md` para acceder a los enlaces de descarga directa de fuentes abiertas, institucionales y gratuitas (Cruz Roja, Defensa Civil, AGROSAVIA, etc.).
+4. **Población Selectiva:** Copia y organiza los archivos descargados dentro de los pilares correspondientes según la capacidad de tu dispositivo.
+5. **Validación Off-Grid:** Conecta la memoria a un teléfono inteligente mediante un adaptador OTG o a una laptop sin internet para verificar el funcionamiento de los visores y documentos de forma autónoma.
+
+---
+
+## 🔄 Sistema de Actualizaciones Portátiles (`Updater`)
+
+Con el tiempo, la estructura del proyecto evoluciona y se incorporan nuevas guías. Para actualizar tu memoria o servidor local sin perder tu información privada ni requerir conocimientos avanzados:
+* Conecta tu dispositivo a internet de manera ocasional y ejecuta el script local de actualización (`update_vault.bat` o `.sh`).
+* El script consultará un manifiesto remoto (`manifest.json`) para verificar nuevas carpetas o fuentes legales recomendadas, **añadiendo las novedades de manera limpia sin borrar ni sobrescribir tus archivos personales.**
+
+---
+
 ## 🎯 ¿Por qué el Preparacionismo y la Autonomía Offline en Colombia?
 
 En regiones como el Eje Cafetero, Antioquia, Cundinamarca y todo el territorio colombiano, nos enfrentamos frecuentemente a emergencias operativas y naturales:
 
-* **Emergencias Climáticas y Sismológicas:** Inundaciones por temporales invernales, deslizamientos de tierra en vías principales y la constante amenaza sísmica.
-* **Apagones y Fallas de Infraestructura:** Cortes de energía prolongados o caídas en los servicios de los proveedores de internet (*ISPs*).
-* **Zonas de Silencio Comunicativo:** Veredas, zonas rurales y áreas de montaña donde la señal móvil es nula o inestable, requiriendo redes de apoyo autónomas (como radioaficionados en VHF/UHF y nodos LoRa / Meshtastic).
+- **Emergencias Climáticas y Sismológicas:** Inundaciones por temporales invernales, deslizamientos de tierra en vías principales y la constante amenaza sísmica.
+- **Apagones y Fallas de Infraestructura:** Cortes de energía prolongados o caídas en los servicios de los proveedores de internet (*ISPs*).
+- **Zonas de Silencio Comunicativo:** Veredas, zonas rurales y áreas de montaña donde la señal móvil es nula o inestable, requiriendo redes de apoyo autónomas (como radioaficionados en VHF/UHF y nodos LoRa / Meshtastic).
 
 XiraVault nace para dotar a familias, brigadistas, comunidades y radioaficionados de una **herramienta de consulta inmediata** que no dependa de la nube ni de corporaciones tecnológicas centralizadas.
 
@@ -54,7 +83,7 @@ XiraVault/
 │   ├── meshtastic_colombia/    # Configuración y despliegue de nodos LoRa de emergencia
 │   └── directorio_repetidoras/ # Frecuencias VHF/UHF, tonos CTCSS y redes de apoyo (ASOREC)
 ├── 02_AGUA_ENERGIA_Y_REFUGIO/
-│   ├── potabilizacion_agua/    # Métodos de purificación para agua de montaña tropical y lluvia
+│   ├── potabilizacion_agua/    # Métodos de potabilización para agua de montaña tropical y lluvia
 │   └── energia_solar_12v/      # Diagramas de paneles, reguladores, inversores y baterías
 ├── 03_ALIMENTACION_Y_LARGO_PLAZO/
 │   ├── agrosavia_manuales/     # Agricultura urbana, huertas andinas y soberanía alimentaria (AGROSAVIA)
@@ -71,21 +100,21 @@ XiraVault/
 ## 🔌 Dos Formas de Implementación
 
 ### 1. Modo USB Universal (Plug & Play) — *Para cualquier persona y hogar*
-* **Ideal para:** Llevar en el llavero, la maleta de evacuación o entregar a familiares y amigos sin perfiles técnicos.
-* **Requisitos:** Una memoria USB de alta capacidad (64 GB o 128 GB), preferiblemente de diseño dual (USB-A y USB-C).
-* **Instalación:** Formatea la unidad en formato `exFAT` (esencial para soportar archivos pesados como mapas o la Wikipedia offline) y copia la estructura de carpetas en la raíz.
-* **Uso en terreno:** Conecta la USB a un teléfono inteligente mediante un adaptador OTG o a una laptop sin internet. Usa visores de PDF o la app Kiwix para navegar por todo el conocimiento acumulado de forma 100% offline.
+- **Ideal para:** Llevar en el llavero, la maleta de evacuación o entregar a familiares y amigos sin perfiles técnicos.
+- **Requisitos:** Una memoria USB de alta capacidad (64 GB o 128 GB), preferiblemente de diseño dual (USB-A y USB-C).
+- **Instalación:** Formatea la unidad en formato `exFAT` (esencial para soportar archivos pesados como mapas o la Wikipedia offline) y copia la estructura de carpetas en la raíz.
+- **Uso en terreno:** Conecta la USB a un teléfono inteligente mediante un adaptador OTG o a una laptop sin internet. Usa visores de PDF o la app Kiwix para navegar por todo el conocimiento acumulado de forma 100% offline.
 
 ### 2. Modo Servidor Local (Docker / Homelab) — *Para entusiastas y centros de operación*
-* **Ideal para:** Hogares con mini-PCs (como equipos ThinkCentre Tiny o Raspberry Pi) conectados a una UPS o planta eléctrica, centros comunitarios o sedes de radioaficionados.
-* **Requisitos:** Un equipo con Docker y Docker Compose instalados.
-* **Despliegue rápido:**
+- **Ideal para:** Hogares con mini-PCs (como equipos ThinkCentre Tiny o Raspberry Pi) conectados a una UPS o planta eléctrica, centros comunitarios o sedes de radioaficionados.
+- **Requisitos:** Un equipo con Docker y Docker Compose instalados.
+- **Despliegue rápido:**
   ```bash
   git clone https://github.com/tu-usuario/xiravault-colombia.git
   cd xiravault-colombia
   docker compose up -d
   ```
-* **Acceso en red local:** Cualquier dispositivo conectado a la red Wi-Fi interna podrá consultar el portal web de documentos (Puerto `8080`) y el servidor de Wikipedia offline (Puerto `8081`) de forma simultánea.
+- **Acceso en red local:** Cualquier dispositivo conectado a la red Wi-Fi interna podrá consultar el portal web de documentos (Puerto `8080`) y el servidor de Wikipedia offline (Puerto `8081`) de forma simultánea.
 
 ---
 
